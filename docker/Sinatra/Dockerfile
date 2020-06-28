@@ -1,11 +1,6 @@
 # 1. ubuntu 설치 (패키지 업데이트 + 만든사람 표시)
-FROM       ubuntu:16.04
+FROM ruby:2.3
 MAINTAINER danny@danny
-RUN        apt-get -y update
-
-# 2. ruby 설치
-RUN apt-get -y install ruby
-RUN gem install bundler
 
 # 3. 소스 복사
 COPY . /usr/src/app
