@@ -1,5 +1,5 @@
 FROM pytorch/pytorch:latest
-MAINTAINER dongju.park@navercorp.com
+MAINTAINER dongju.park@dongju.com
 
 COPY . /workspace
 
