@@ -103,5 +103,17 @@ ENV <key>=<value> ...
 ENV DB_URL mysql
 ```
 
+**Build**  
+: 도커 이미지 빌드.  
+
+```
+docker build [OPTIONS] PATH | URL | -
+생성할 이미지 이름을 지정하기 위한 -t(--tag) 옵션만 알면 빌드가 가능합니다.
+
+Dockerfile을 만든 디렉토리로 이동하여 다음 명령어를 입력합니다.
+
+docker build -t app .
+```
+
 ## Reference
 - https://subicura.com/2017/02/10/docker-guide-for-beginners-create-image-and-deploy.html
