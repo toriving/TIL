@@ -29,3 +29,11 @@ $ git lfs install
 $ git lfs track "*.tsv"
 $ git add .gitattributes
 ```
+**폴더 전체는 되지 않고 특정 파일을 지정해야함**
+ex)  
+```
+$ git lfs track data/ 
+X
+$ git lfs track data/training.csv
+O
+```
