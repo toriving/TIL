@@ -1,6 +1,6 @@
 # tar
 
-** tar로 압축을 하기 위해 사용 **
+**tar로 압축을 하기 위해 사용**
 
 tar cvzf 압축명.tgz --exclude 묶을폴더/제외1 --exclude 묶을폴더/제외2 묶을폴더
 
