@@ -31,5 +31,5 @@ GUI 세션에서 터미널을 띄우는 경우, ‘sudo bash’나 ‘su’같�
 
 
 
-[Refer](https://jongmin92.github.io/2016/12/13/Linux%20&%20Ubuntu/bashrc-bash_profile/)
+[Refer](https://jongmin92.github.io/2016/12/13/Linux%20&%20Ubuntu/bashrc-bash_profile/). 
 [Refer2](https://zetawiki.com/wiki/Profile_bashrc_bash_profile_실행_순서)
