@@ -13,7 +13,7 @@ $ echo abcde > test.txt
 
 To route the output and errors from Windows, you can use the following code outside of your Python file:
 ```
-python a.py 1> a.out 2>&1
+$ python a.py 1> a.out 2>&1
 ```
 
 `>>`의 경우
