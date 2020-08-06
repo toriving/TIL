@@ -27,4 +27,8 @@ grep과 함께 사용될 수 있음
 $ grep -o '{"abc":[a-zA-Z0-9.,":_-]*}' test.txt | head -1 >> result.txt
 ```
 
+파일 합치기
+
+$ cat text1.txt text2.txt > text3.txt
+
 [refer](https://twpower.github.io/114-difference-between-single-and-double-greater-than-sign)
