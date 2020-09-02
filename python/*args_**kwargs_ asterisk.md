@@ -18,5 +18,5 @@ kwargs = keyword arguments
 3. 가변인자 (Variadic Parameters)를 사용하고자 할 때 ( * -> positional args, ** -> keyword args )
 4. 컨테이너 타입의 데이터를 Unpacking 할 때 (* -> list,tuple... 타입, ** -> dict 타입)
 
-[Refer1](https://brunch.co.kr/@princox/180)
+[Refer1](https://brunch.co.kr/@princox/180)  
 [Refer2](https://mingrammer.com/understanding-the-asterisk-of-python/)
