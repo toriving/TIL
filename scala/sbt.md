@@ -158,7 +158,7 @@ Hello, world!
 
 ### Reference
 
-https://stackoverflow.com/questions/22556499/what-are-key-differences-between-sbt-pack-and-sbt-assembly
-https://rtfmplz.github.io/2017/05/30/scala-app-packaging
-https://gist.github.com/jungbin-kim/823e6d929d805823f265bb430d2b5e03
+https://stackoverflow.com/questions/22556499/what-are-key-differences-between-sbt-pack-and-sbt-assembly  
+https://rtfmplz.github.io/2017/05/30/scala-app-packaging  
+https://gist.github.com/jungbin-kim/823e6d929d805823f265bb430d2b5e03  
 
