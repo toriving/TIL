@@ -14,6 +14,8 @@ object helloworld {
 
 ## sbt package
 
+build.sbt 를 아래와 같이 작성하자
+
 ```sbt
 build.sbt
 
@@ -27,6 +29,8 @@ lazy val commonSettings = Seq(
 lazy val app = (project in file(".")).
   settings(commonSettings: _*)
 ```
+
+그 후 sbt package를 
 
 ```shell-script
 $ sbt package
