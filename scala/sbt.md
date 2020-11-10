@@ -162,6 +162,3 @@ https://stackoverflow.com/questions/22556499/what-are-key-differences-between-sb
 https://rtfmplz.github.io/2017/05/30/scala-app-packaging
 https://gist.github.com/jungbin-kim/823e6d929d805823f265bb430d2b5e03
 
-addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.5")
-addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.3.3")
-addSbtPlugin("com.typesafe.sbt" % "sbt-license-report" % "1.2.0")
