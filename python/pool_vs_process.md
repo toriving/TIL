@@ -36,6 +36,7 @@ Pool은 주어진 processor 갯수로 작업을 순서에 상관없이 할당하
 반면 Process는 메모리에 전부 올려놓고 cpu core processor를 가능한 많이 사용하여 작업을 한다.  
 따라서 순서 유지가 가능하지만, 메모리가 Pool 보다는 더 많이 잡아 먹게 된다.  
 일반적으로 작업의 수가 작고 해당 task를 한번만 해도 되면 process를 사용한다.  
+작업의 수가 많을때 사용하면 machine disturbance이 발생하여 느려질 수 있음.  
 긴 I/O 작업일 떄 주로 사용한다.  
 
 
@@ -45,6 +46,11 @@ map_async의 경우 map이 비동기로 돌아간다.
 pool.map_async(f, ...).wait() 을 사용하면 map 처럼 사용이 가능하다
 
 https://stackoverflow.com/questions/35908987/multiprocessing-map-vs-map-async
+
+## 요약
+To summarize this, pool class works better when there are more processes and small IO wait. 
+
+Process class works better when processes are small in number and IO operations are long.
 
 ### Reference
 
