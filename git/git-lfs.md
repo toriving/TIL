@@ -37,3 +37,9 @@ X
 $ git lfs track data/training.csv
 O
 ```
+** 폴더 하위 파일들은 아래와 같이 할 수 있음**
+
+```
+$ git lfs tracak 'data/**/*'
+```
+
