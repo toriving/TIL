@@ -8,3 +8,4 @@ Today I Learned
 ## Favorite
 ### GIT
 - [Commit Message](https://blog.ull.im/engineering/2019/03/10/logs-on-git.html)
+- [Branch Rule](https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html)
