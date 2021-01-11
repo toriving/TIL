@@ -58,11 +58,17 @@ e.g)
 
 > In contrast to RNNs, Transformers, process the input in parallel. Although a weak notion of order is encoded by positional embeddings, no explicit assumption is made in the connectivity structure of the architecture. Moreover, they have a global receptive field and can access all tokens through self-attention. Finally, standard Transformers are not recursive, they apply the same set of weights on all input tokens, but they don’t do it recursively.
 
+[Reference](https://samiraabnar.github.io/articles/2020-05/recurrence)  
+
+> Transformer's inductive bias is more relaxed than either recurrent or convolutional architectures and reflects the fact that bag of words models are surprisingly competitive with the positionally aware NN models.
+The positional embeddings of the transformer architecture allow the model to encode absolute position, relative position and positionally invariant relationships. Another inductive bias is true bi-directionality with being able to attend to all "future" and "past" tokens reflects the fact that sentences can be written in multiple ways with words appearing in different orders.
+Another inductive bias that is part of BERT and other related models that is not necessarily strictly Transformer architecture related is to use Byte Pair Encoding for words. This reflects the inductive bias that words composed of similar subwords are related and allows the models to perform well without stemming and without having an enormous vocabulary size
+
 위와 같은 이유로 RNN 및 CNN 보다 inductive bias가 약하다고 말할 수 있음
 
 transformer의 transformer block 의 weight를 sharing 하면 recurrent bias를 얻을 수 있으며 성능향상도 얻을 수 있다고함 (Universal transformer)
 
-[Reference](https://samiraabnar.github.io/articles/2020-05/recurrence)  
+
 [Reddit](https://www.reddit.com/r/MachineLearning/comments/d0gnyp/d_what_is_the_inductive_bias_in_transformer/)  
 [Universal transformers](https://arxiv.org/pdf/1807.03819.pdf)  
 [Relational inductive biases, deep learning, and graph networks](https://arxiv.org/pdf/1806.01261.pdf)  
