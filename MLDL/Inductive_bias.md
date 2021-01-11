@@ -53,3 +53,5 @@ e.g)
 - 이러한 CNN은 픽셀의 순서가 바뀌면 feature가 달라짐. (커널에 의해서)
 - 이것을 permutation variant 하다고 함. (입력 순서가 바뀌면 출력이 달라지는 것)
 - 따라서 Inductive bias (모델의 특성을 결정하는 가정)에 따라서 permutation variant / invariant 여부가 결정됨
+
+**Inductive bias가 작을수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**
