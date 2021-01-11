@@ -65,4 +65,5 @@ transformer의 transformer block 의 weight를 sharing 하면 recurrent bias를 
 [Reference](https://samiraabnar.github.io/articles/2020-05/recurrence)
 
 ## etc
-**Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**
+**Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**  
+Inductive bias가 강할수록 모델 성능의 분산이 작아짐
