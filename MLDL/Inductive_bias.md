@@ -62,8 +62,12 @@ e.g)
 
 transformer의 transformer block 의 weight를 sharing 하면 recurrent bias를 얻을 수 있으며 성능향상도 얻을 수 있다고함 (Universal transformer)
 
-[Reference](https://samiraabnar.github.io/articles/2020-05/recurrence)
+[Reference](https://samiraabnar.github.io/articles/2020-05/recurrence)  
+[Universal transformers](https://arxiv.org/pdf/1807.03819.pdf)  
+[Relational inductive biases, deep learning, and graph networks](https://arxiv.org/pdf/1806.01261.pdf)  
 
 ## etc
 **Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**  
 Inductive bias가 강할수록 모델 성능의 분산이 작아짐
+
+![img](https://i.stack.imgur.com/QbD58.png)
