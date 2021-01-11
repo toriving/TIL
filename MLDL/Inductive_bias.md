@@ -24,6 +24,21 @@ Neural Networks: crudely speaking, Y is some non-linear function of X (the non l
 
 [Reference](https://stackoverflow.com/questions/35655267/what-is-inductive-bias-in-machine-learning)
 
+## 3
+
+기계학습에서의 inductive bias는, 학습 모델이 지금까지 만나보지 못했던 상황에서 정확한 예측을 하기 위해 사용하는 추가적인 가정을 의미합니다. (Wikipedia)  
+
+기계학습에서는 특정 목표 출력(target output)을 예측하기 위해 학습 가능한 알고리즘 구축을 목표로 하고, 학습 모델에는 제한된 수의 입력과 출력에 대한 data가 주어집니다. 
+
+학습이 성공적으로 끝난 후에, 학습 모델은 훈련동안에는 보이지 않았던 예들 까지도 정확한 출력에 가까워지도록 추측해야합니다. 이럴 때 추가적인 가정이 없이는 불가능한데, 이 Target function의 성질에 대해 필요한 가정과 같은 것이 Inductive bias라고 볼 수 있습니다.  
+
+가장 고전적이고 대표적인 예가 Occam’s Razor, 오컴의 면도날입니다. 이는 target function에 대해 가장 단순한 무모순의 가설이 실제로 가장 좋을 것이라고 가정합니다. 
+
+이 inductive bias의 개념은 Max Welling의 CoNLL 2018 keynote에서의 메인 테마였습니다. 2가지의 비결은 다음과 같습니다.  
+
+[Reference](https://mino-park7.github.io/blog/)
+
+
 
 ## Inductive bias with permutation variant
 
