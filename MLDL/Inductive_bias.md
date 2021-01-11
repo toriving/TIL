@@ -54,5 +54,15 @@ e.g)
 - 이것을 permutation variant 하다고 함. (입력 순서가 바뀌면 출력이 달라지는 것)
 - 따라서 Inductive bias (모델의 특성을 결정하는 가정)에 따라서 permutation variant / invariant 여부가 결정됨
 
+## Transformer with inductive bias
+
+> In contrast to RNNs, Transformers, process the input in parallel. Although a weak notion of order is encoded by positional embeddings, no explicit assumption is made in the connectivity structure of the architecture. Moreover, they have a global receptive field and can access all tokens through self-attention. Finally, standard Transformers are not recursive, they apply the same set of weights on all input tokens, but they don’t do it recursively.
+
+위와 같은 이유로 RNN 및 CNN 보다 inductive bias가 약하다고 말할 수 있음
+
+transformer의 transformer block 의 weight를 sharing 하면 recurrent bias를 얻을 수 있으며 성능향상도 얻을 수 있다고함 (Universal transformer)
+
+[Reference](https://samiraabnar.github.io/articles/2020-05/recurrence)
+
 ## etc
-**Inductive bias가 작을수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**
+**Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**
