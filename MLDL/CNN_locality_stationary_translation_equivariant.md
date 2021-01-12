@@ -40,9 +40,15 @@ Sparse interactions는 하나의 출력 유닛이 입력의 전체 유닛과 연
 
 ## translation equivariant
 
+translation invariance : CNN에서 translation invariance란 input의 위치가 달라져도 output이 동일한 값을 갖는것을 말한다 (translation equivariant와 반대)
+
 1. Max Pooling : "k x k 범위내에서의 translation에 대해서는 invariance 하다"
 2. Weight sharing & Learn local features (filter) : translation equivariant  
-3. Softmax : "Object의 위치와 상관없이 패턴이 동일하면 동일한 output을 갖게된다"  
+3. Fc & Softmax : "Object의 위치와 상관없이 패턴이 동일하면 동일한 output을 갖게된다"  
+
+**classification으로 output k가 나오기 위해서는 feature map k에 높은 값이 많으면 되는 것이고**
+
+**feature map k에 높은 값이 많으려면 channel k와 original image가 비슷한 패턴을 갖고 있어야 한다.**
 
 즉, CNN자체는 translation equivariance한 네트워크이다. 
 
@@ -65,5 +71,5 @@ translation equivariant 특성을 갖은 convolution 연산 (filter)과 translat
 
 아래 글은 너무 좋다.  
 [CNN과 이미지가 찰떡궁합인 이유](https://medium.com/@seoilgun/cnn%EC%9D%98-stationarity%EC%99%80-locality-610166700979)  
-[CNN은 왜 이미지영역에서 두각을 나타나게 된건가요?](https://89douner.tistory.com/58)
-[translation invariance 설명 및 정리](https://ganghee-lee.tistory.com/43)
+[CNN은 왜 이미지영역에서 두각을 나타나게 된건가요?](https://89douner.tistory.com/58)  
+[translation invariance 설명 및 정리](https://ganghee-lee.tistory.com/43)  
