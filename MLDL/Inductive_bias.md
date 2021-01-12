@@ -54,7 +54,7 @@ e.g)
 - 이것을 permutation variant 하다고 함. (입력 순서가 바뀌면 출력이 달라지는 것)
 - 따라서 Inductive bias (모델의 특성을 결정하는 가정)에 따라서 permutation variant / invariant 여부가 결정됨
 
-## Transformer with inductive bias
+## Transformers with inductive bias
 
 > In contrast to RNNs, Transformers, process the input in parallel. Although a weak notion of order is encoded by positional embeddings, no explicit assumption is made in the connectivity structure of the architecture. Moreover, they have a global receptive field and can access all tokens through self-attention. Finally, standard Transformers are not recursive, they apply the same set of weights on all input tokens, but they don’t do it recursively.
 
@@ -72,6 +72,14 @@ transformer의 transformer block 의 weight를 sharing 하면 recurrent bias를 
 [Reddit](https://www.reddit.com/r/MachineLearning/comments/d0gnyp/d_what_is_the_inductive_bias_in_transformer/)  
 [Universal transformers](https://arxiv.org/pdf/1807.03819.pdf)  
 [Relational inductive biases, deep learning, and graph networks](https://arxiv.org/pdf/1806.01261.pdf)  
+
+## Transformers with permutation variant
+
+> 일반적으로 transformer의 아웃풋 set을 하나의 vector로 permutation-invariant하게 reduce하는 함수 f를 정의할 수 있겠는데요. f의 예로는 BERT와 같이 0번째 vector를 가져오거나 set 전체를 summation하는 방법 등이 있겠습니다. 기본적으로 트랜스포머는 set을 인풋으로 받아서 set을 아웃풋으로 내뱉는 구조이고, f가 permutation invariant하면 인풋 set을 어떤 식으로 셔플하던지 간에 reduce된 vector는 같습니다.
+말씀하신 position embedding을 더해서 사용하는 것은 순서가 있는 sequence를 다루기 위한 트랜스포머의 응용의 한 종류 인데요, position embedding을 붙이는 경우 두 개의 관점이 존재할 수 있는데: (1) 만약에 input vector set을 shuffle한 다음에 그 position에 따라서 position embedding을 붙이게 된다면 shuffle된 permutation에 따라서 f의 결과가 달라져서 permutation variant하다고 볼 수 있습니다. (2) 그러나 position embedding까지 더해진 전체 embedding 값 (token_embedding + position_embedding + token_type_embedding)을 set의 element로 본다면 이 경우 어떤 permutation이던지 f가 같은 vector를 출력할 수 있겠죠.
+(1) 관점은 position embedding 자체를 transformer라는 함수의 구성 요소로 보는 경우입니다. 이 경우 transformer는 permutation variant 한게 맞습니다. 다만 현재 language modeling (더 나아가서 sequence modeling) 이외의 영역에서는 position embedding 없이 transformer를 사용하는 경우도 있습니다 (대표적으로 set transformer가 있습니다). 따라서 저는 (2) 관점, 즉 position embedding을 transformer의 구성 요소로 보지 않는 것이 더 타당하다고 생각합니다.
+
+Reference : [본문 및 댓글](https://wonjae.kim/blog/2021/Exploiting_Contemporary_ML/?fbclid=IwAR3hTsYTNPJ93RbNTg5eJ3wbwcqDjN8Eqqp31tVJy3BurDl_Q5Kj6gpGal0)  
 
 ## etc
 **Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**  
