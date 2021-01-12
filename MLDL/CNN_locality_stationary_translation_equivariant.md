@@ -72,4 +72,5 @@ translation equivariant 특성을 갖은 convolution 연산 (filter)과 translat
 아래 글은 너무 좋다.  
 [CNN과 이미지가 찰떡궁합인 이유](https://medium.com/@seoilgun/cnn%EC%9D%98-stationarity%EC%99%80-locality-610166700979)  
 [CNN은 왜 이미지영역에서 두각을 나타나게 된건가요?](https://89douner.tistory.com/58)  
-[translation invariance 설명 및 정리](https://ganghee-lee.tistory.com/43)  
+[translation invariance 설명 및 정리](https://ganghee-lee.tistory.com/43)   
+[Stack](https://stats.stackexchange.com/questions/208936/what-is-translation-invariance-in-computer-vision-and-convolutional-neural-netwo)  
