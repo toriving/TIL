@@ -38,6 +38,10 @@ locality of pixel dependencies는 쉽게 이미지는 작은 특징들로 구성
 
 Sparse interactions는 하나의 출력 유닛이 입력의 전체 유닛과 연결되어 있지않고 입력의 일부 유닛들과만 연결되어 있다는 의미로 주변 픽셀들과만 연관이 있다는 가정인 locality와 딱 들어 맞는다.
 
+## translation equivariance
+
+translation equivariance한 특성을 갖은 convolution 연산 (filter)과 translation invariance and downsampling 특성을 갖는 pooling 과정을 반복하다 맨 끝단까지 가면 CNN이라는 것이 큰 변화에도 translation invariance 하다고 말할수 있을까?
+
 ## 결론
 
 결론
@@ -50,4 +54,5 @@ Sparse interactions는 하나의 출력 유닛이 입력의 전체 유닛과 연
 ## Reference
 
 아래 글은 너무 좋다.  
-[CNN과 이미지가 찰떡궁합인 이유](https://medium.com/@seoilgun/cnn%EC%9D%98-stationarity%EC%99%80-locality-610166700979)
+[CNN과 이미지가 찰떡궁합인 이유](https://medium.com/@seoilgun/cnn%EC%9D%98-stationarity%EC%99%80-locality-610166700979)  
+[CNN은 왜 이미지영역에서 두각을 나타나게 된건가요?](https://89douner.tistory.com/58)
