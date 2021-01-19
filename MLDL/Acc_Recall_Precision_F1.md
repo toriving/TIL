@@ -62,3 +62,5 @@ base line을 두고 비교
 ## ROC curve vs PR curve
 일반적으로 ROC curve가 더 robustness 하나, imbalanced dataset에 대해서는 PR curve 사용
 
+## Reference
+https://pacientes.github.io/posts/2021/01/ml_precision_recall/?fbclid=IwAR3tVpsJPtdKgD0BfjdyHI28VEXQmkayNre6DGvSpeB3NO1V4Tjeg0MeYoM
