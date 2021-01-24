@@ -126,6 +126,10 @@ outputs.last_hidden_state[0]
        grad_fn=<SelectBackward>)
 ```
 
+이해가 안되면 아래 레퍼런스를 보자  
+https://github.com/cedrickchee/awesome-bert-nlp  
+http://jalammar.github.io/illustrated-transformer/  
+
 
 ## etc
 **Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**  
