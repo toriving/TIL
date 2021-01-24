@@ -81,6 +81,52 @@ transformer의 transformer block 의 weight를 sharing 하면 recurrent bias를 
 
 Reference : [본문 및 댓글](https://wonjae.kim/blog/2021/Exploiting_Contemporary_ML/?fbclid=IwAR3hTsYTNPJ93RbNTg5eJ3wbwcqDjN8Eqqp31tVJy3BurDl_Q5Kj6gpGal0)  
 
+실제로 transformers를 통해 **position embedding을 0으로 모두 고정**시켜놓고 inference를 하면 cls 토큰은 permutation invariant 하다.  
+각각의 input token은 vector로 변환되고 k, q, v 로 계산되어 사용이 되는데 모든 토큰에 대해 같은 weight를 통해 k, q, v로 변환하기 때문이다.    
+또한 transformers 안의 linear projection이나 feed-forward layer의 경우 개별 토큰 (position wise)로 계산되기 때문에 입력 토큰의 순서에 따라서 다른 토큰들의 계산에 영향을 주지 않는다.  
+
+```python
+>>> from transformers import BertTokenizer, BertModel
+>>> import torch
+
+>>> tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+>>> model = BertModel.from_pretrained('bert-base-uncased')
+
+>>> inputs = tokenizer("Hello, my dog is cute", return_tensors="pt")
+>>> outputs = model(**inputs)
+
+>>> last_hidden_states = outputs.last_hidden_state
+
+t1 = {'position_ids': torch.tensor([0]*8), 'input_ids': torch.tensor([[  101,  7592,  1010,  2026,  3899,  2003, 10140,   102]]), 'token_type_ids': torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0]]), 'attention_mask': torch.tensor([[1, 1, 1, 1, 1, 1, 1, 1]])}
+
+t2 =  {'position_ids': torch.tensor([0]*8), 'input_ids': torch.tensor([[  101,    1010, 7592, 2026,  3899,  2003, 10140,   102]]), 'token_type_ids': torch.tensor([[0, 0, 0, 0, 0, 0, 0, 0]]), 'attention_mask': torch.tensor([[1, 1, 1, 1, 1, 1, 1, 1]])}
+
+outputs = model(**t1)
+outputs.last_hidden_state[0]
+
+>>> tensor([[-0.3689,  0.2264, -0.7858,  ..., -0.0651,  0.4633,  0.3824],
+        [-0.3558,  0.3680, -1.0172,  ..., -0.1852,  0.3436,  0.4455],
+        [-0.4163,  0.3884, -0.5884,  ..., -0.0112,  0.2883,  0.2787],
+        ...,
+        [-0.3605,  0.4644, -1.0120,  ..., -0.2623,  0.1852,  0.6151],
+        [-0.3672,  0.3302, -0.7691,  ..., -0.0583,  0.4470,  0.4243],
+        [ 0.5736,  0.4118, -0.7354,  ...,  0.1107, -0.6458,  0.0465]],
+       grad_fn=<SelectBackward>)
+
+outputs = model(**t2)
+outputs.last_hidden_state[0]
+
+>>> tensor([[-0.3689,  0.2264, -0.7858,  ..., -0.0651,  0.4633,  0.3824],
+        [-0.4163,  0.3884, -0.5884,  ..., -0.0112,  0.2883,  0.2787],
+        [-0.3558,  0.3680, -1.0171,  ..., -0.1852,  0.3436,  0.4455],
+        ...,
+        [-0.3605,  0.4644, -1.0120,  ..., -0.2623,  0.1852,  0.6151],
+        [-0.3672,  0.3302, -0.7691,  ..., -0.0583,  0.4470,  0.4243],
+        [ 0.5736,  0.4118, -0.7354,  ...,  0.1107, -0.6458,  0.0465]],
+       grad_fn=<SelectBackward>)
+```
+
+
 ## etc
 **Inductive bias가 약할수록 학습에 필요한 데이터는 많아야 충분히 학습이 가능**  
 Inductive bias가 강할수록 모델 성능의 분산이 작아짐
